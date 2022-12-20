@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="region_opcodes.xsd" />
+
+    <!-- Region categories -->
+
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Region opcode groups ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:group name="region.soundcontrols">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="count" />
+                <xs:element ref="delay" />
+                <xs:element ref="delay_onccN" />
+                <xs:element ref="delay_random" />
+                <xs:element ref="delay_samples" />
+                <xs:element ref="delay_samples_onccN" />
+                <xs:element ref="end" />
+                <xs:element ref="loop_count" />
+                <xs:element ref="loop_crossfade" />
+                <xs:element ref="loop_end" />
+                <xs:element ref="loop_mode" />
+                <xs:element ref="loop_start" />
+                <xs:element ref="loop_type" />
+                <xs:element ref="offset" />
+                <xs:element ref="offset_onccN" />
+                <xs:element ref="offset_random" />
+                <xs:element ref="sample" />
+                <xs:element ref="sync_beats" />
+                <xs:element ref="sync_offset" />
+                <xs:element ref="delay_beats" />
+                <xs:element ref="stop_beats" />
+                <xs:element ref="direction" />
+                <xs:element ref="md5" />
+                <xs:element ref="reverse_loccN" />
+                <xs:element ref="reverse_hiccN" />
+                <xs:element ref="waveguide" />
+                <!--  Voice Lifecycle -->
+                <xs:element ref="off_by" />
+                <xs:element ref="off_mode" />
+                <xs:element ref="output" />
+                <xs:element ref="polyphony" />
+                <xs:element ref="note_polyphony" />
+                <xs:element ref="note_selfmask" />
+                <xs:element ref="rt_dead" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.logic.internalconditions">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="lobpm" />
+                <xs:element ref="hibpm" />
+                <xs:element ref="lochanaft" />
+                <xs:element ref="hichanaft" />
+                <xs:element ref="lopolyaft" />
+                <xs:element ref="hipolyaft" />
+                <xs:element ref="lorand" />
+                <xs:element ref="hirand" />
+                <xs:element ref="seq_length" />
+                <xs:element ref="seq_position" />
+                <xs:element ref="lotimer" />
+                <xs:element ref="hitimer" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.logic.keymappings">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="key" />
+                <xs:element ref="lokey" />
+                <xs:element ref="hikey" />
+                <xs:element ref="lovel" />
+                <xs:element ref="hivel" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.logic.midiconditions">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="lochan" />
+                <xs:element ref="hichan" />
+                <xs:element ref="loccN" />
+                <xs:element ref="hiccN" />
+                <xs:element ref="lobend" />
+                <xs:element ref="hibend" />
+                <xs:element ref="sostenuto_sw" />
+                <xs:element ref="sustain_sw" />
+                <xs:element ref="sw_lokey" />
+                <xs:element ref="sw_hikey" />
+                <xs:element ref="sw_last" />
+                <xs:element ref="sw_down" />
+                <xs:element ref="sw_up" />
+                <xs:element ref="sw_previous" />
+                <xs:element ref="sw_vel" />
+                <xs:element ref="loprog" />
+                <xs:element ref="hiprog" />
+                <xs:element ref="sw_default" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.logic.triggers">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="trigger" />
+                <xs:element ref="start_loccN" />
+                <xs:element ref="start_hiccN" />
+                <xs:element ref="stop_loccN" />
+                <xs:element ref="stop_hiccN" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.performance.amplifier">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="pan" />
+                <xs:element ref="position" />
+                <xs:element ref="volume" />
+                <xs:element ref="gain_onccN" />
+                <!-- gain_ccN alias: gain_onCCN or volume_onccN [SFZ v2] ? -->
+                <xs:element ref="volume_onccN" />
+                <xs:element ref="volume_curveccN" />
+                <xs:element ref="volume_smoothccN" />
+                <xs:element ref="volume_stepccN" />
+                <xs:element ref="width" />
+                <xs:element ref="amp_keycenter" />
+                <xs:element ref="amp_keytrack" />
+                <xs:element ref="amp_veltrack" />
+                <xs:element ref="amp_velcurve_N" />
+                <xs:element ref="amp_random" />
+                <xs:element ref="rt_decay" />
+                <xs:element ref="xf_cccurve" />
+                <xs:element ref="xf_keycurve" />
+                <xs:element ref="xf_velcurve" />
+                <xs:element ref="xfin_loccN" />
+                <xs:element ref="xfin_hiccN" />
+                <xs:element ref="xfout_loccN" />
+                <xs:element ref="xfout_hiccN" />
+                <xs:element ref="xfin_lokey" />
+                <xs:element ref="xfin_hikey" />
+                <xs:element ref="xfout_lokey" />
+                <xs:element ref="xfout_hikey" />
+                <xs:element ref="xfin_lovel" />
+                <xs:element ref="xfin_hivel" />
+                <xs:element ref="xfout_lovel" />
+                <xs:element ref="xfout_hivel" />
+                <xs:element ref="phase" />
+                <xs:element ref="pan_keycenter" />
+                <xs:element ref="pan_keytrack" />
+                <xs:element ref="pan_veltrack" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.performance.eq">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="eqN_bw" />
+                <xs:element ref="eqN_bw_onccX" />
+                <xs:element ref="eqN_freq" />
+                <xs:element ref="eqN_freq_onccX" />
+                <xs:element ref="eqN_vel2freq" />
+                <xs:element ref="eqN_gain" />
+                <xs:element ref="eqN_gain_onccX" />
+                <xs:element ref="eqN_vel2gain" />
+                <xs:element ref="eqN_type" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.performance.filter">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="cutoff" />
+                <xs:element ref="cutoff2" />
+                <!-- cutoff2_ccN [SFZ V1] ? -->
+                <!-- <xs:element ref="cutoff2_ccN" /> -->
+                <xs:element ref="cutoff2_onccN" />
+                <xs:element ref="cutoff2_curveccN" />
+                <xs:element ref="cutoff2_smoothccN" />
+                <xs:element ref="cutoff2_stepccN" />
+                <xs:element ref="cutoff2_chanaft" />
+                <xs:element ref="cutoff2_polyaft" />
+                <xs:element ref="cutoff_onccN" />
+                <xs:element ref="cutoff_curveccN" />
+                <xs:element ref="cutoff_smoothccN" />
+                <xs:element ref="cutoff_stepccN" />
+                <xs:element ref="cutoff_chanaft" />
+                <xs:element ref="cutoff_polyaft" />
+                <xs:element ref="fil_keycenter" />
+                <xs:element ref="fil2_keycenter" />
+                <xs:element ref="fil_keytrack" />
+                <xs:element ref="fil2_keytrack" />
+                <xs:element ref="cutoff_random" />
+                <xs:element ref="fil_type" />
+                <xs:element ref="fil_veltrack" />
+                <xs:element ref="fil2_veltrack" />
+                <xs:element ref="resonance" />
+                <xs:element ref="resonance2" />
+                <xs:element ref="resonance2_onccN" />
+                <!-- resonance2_onccN alias: resonance2_ccN [SFZ v2] ? TODO: Check which is v2 -->
+                <!-- <xs:element ref="resonance2_ccN" /> -->
+                <xs:element ref="resonance2_curveccN" />
+                <xs:element ref="resonance2_smoothccN" />
+                <xs:element ref="resonance2_stepccN" />
+                <xs:element ref="resonance_onccN" />
+                <xs:element ref="resonance_curveccN" />
+                <xs:element ref="resonance_smoothccN" />
+                <xs:element ref="resonance_stepccN" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.performance.pitch">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="bend_up" />
+                <xs:element ref="bend_down" />
+                <xs:element ref="bend_smooth" />
+                <xs:element ref="bend_step" />
+                <xs:element ref="tune" />
+                <xs:element ref="pitch_onccN" />
+                <xs:element ref="pitch_curveccN" />
+                <xs:element ref="pitch_smoothccN" />
+                <xs:element ref="pitch_stepccN" />
+                <xs:element ref="pitch_keycenter" />
+                <xs:element ref="pitch_keytrack" />
+                <xs:element ref="pitch_random" />
+                <xs:element ref="pitch_veltrack" />
+                <xs:element ref="transpose" />
+                <xs:element ref="bend_stepup" />
+                <xs:element ref="bend_stepdown" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.modulation.eg">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ampeg_attack" />
+                <xs:element ref="ampeg_attack_onccN" />
+                <xs:element ref="ampeg_vel2attack" />
+                <xs:element ref="ampeg_decay" />
+                <xs:element ref="ampeg_decay_onccN" />
+                <xs:element ref="ampeg_vel2decay" />
+                <xs:element ref="ampeg_delay" />
+                <xs:element ref="ampeg_delay_onccN" />
+                <xs:element ref="ampeg_vel2delay" />
+                <xs:element ref="ampeg_hold" />
+                <xs:element ref="ampeg_hold_onccN" />
+                <xs:element ref="ampeg_vel2hold" />
+                <xs:element ref="ampeg_release" />
+                <xs:element ref="ampeg_release_onccN" />
+                <xs:element ref="ampeg_vel2release" />
+                <xs:element ref="ampeg_sustain" />
+                <xs:element ref="ampeg_sustain_onccN" />
+                <xs:element ref="ampeg_vel2sustain" />
+                <xs:element ref="ampeg_start" />
+                <xs:element ref="ampeg_start_onccN" />
+                <xs:element ref="fileg_attack" />
+                <xs:element ref="fileg_vel2attack" />
+                <xs:element ref="fileg_decay" />
+                <xs:element ref="fileg_vel2decay" />
+                <xs:element ref="fileg_delay" />
+                <xs:element ref="fileg_vel2delay" />
+                <xs:element ref="fileg_depth" />
+                <xs:element ref="fileg_vel2depth" />
+                <xs:element ref="fileg_hold" />
+                <xs:element ref="fileg_vel2hold" />
+                <xs:element ref="fileg_release" />
+                <xs:element ref="fileg_vel2release" />
+                <xs:element ref="fileg_start" />
+                <xs:element ref="fileg_sustain" />
+                <xs:element ref="fileg_vel2sustain" />
+                <xs:element ref="pitcheg_attack" />
+                <xs:element ref="pitcheg_vel2attack" />
+                <xs:element ref="pitcheg_decay" />
+                <xs:element ref="pitcheg_vel2decay" />
+                <xs:element ref="pitcheg_delay" />
+                <xs:element ref="pitcheg_vel2delay" />
+                <xs:element ref="pitcheg_depth" />
+                <xs:element ref="pitcheg_vel2depth" />
+                <xs:element ref="pitcheg_hold" />
+                <xs:element ref="pitcheg_vel2hold" />
+                <xs:element ref="pitcheg_release" />
+                <xs:element ref="pitcheg_vel2release" />
+                <xs:element ref="pitcheg_start" />
+                <xs:element ref="pitcheg_sustain" />
+                <xs:element ref="pitcheg_vel2sustain" />
+                <xs:element ref="egN_points" />
+                <xs:element ref="egN_timeX" />
+                <xs:element ref="egN_timeX_onccY" />
+                <xs:element ref="egN_levelX" />
+                <xs:element ref="egN_levelX_onccY" />
+                <xs:element ref="egN_shapeX" />
+                <xs:element ref="egN_curveX" />
+                <xs:element ref="egN_sustain" />
+                <xs:element ref="egN_loop" />
+                <xs:element ref="egN_loop_count" />
+                <xs:element ref="egN_volume" />
+                <xs:element ref="egN_volume_onccX" />
+                <xs:element ref="egN_amplitude" />
+                <xs:element ref="egN_amplitude_onccX" />
+                <xs:element ref="egN_pan" />
+                <xs:element ref="egN_pan_onccX" />
+                <xs:element ref="egN_width" />
+                <xs:element ref="egN_width_onccX" />
+                <xs:element ref="egN_pan_curve" />
+                <xs:element ref="egN_pan_curveccX" />
+                <xs:element ref="egN_freq_lfoX" />
+                <xs:element ref="egN_depth_lfoX" />
+                <xs:element ref="egN_depthadd_lfoX" />
+                <xs:element ref="egN_pitch" />
+                <xs:element ref="egN_pitch_onccX" />
+                <xs:element ref="egN_cutoff" />
+                <xs:element ref="egN_cutoff_onccX" />
+                <xs:element ref="egN_cutoff2" />
+                <xs:element ref="egN_cutoff2_onccX" />
+                <xs:element ref="egN_resonance" />
+                <xs:element ref="egN_resonance_onccX" />
+                <xs:element ref="egN_resonance2" />
+                <xs:element ref="egN_resonance2_onccX" />
+                <xs:element ref="egN_eqXfreq" />
+                <xs:element ref="egN_eqXfreq_onccY" />
+                <xs:element ref="egN_eqXbw" />
+                <xs:element ref="egN_eqXbw_onccY" />
+                <xs:element ref="egN_eqXgain" />
+                <xs:element ref="egN_eqXgain_onccY" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="region.modulation.lfo">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="amplfo_delay" />
+                <xs:element ref="amplfo_depth" />
+                <xs:element ref="amplfo_depth_onccN" />
+                <xs:element ref="amplfo_depthchanaft" />
+                <xs:element ref="amplfo_depthpolyaft" />
+                <xs:element ref="amplfo_fade" />
+                <xs:element ref="amplfo_freq" />
+                <xs:element ref="amplfo_freqccN" />
+                <xs:element ref="amplfo_freqchanaft" />
+                <xs:element ref="amplfo_freqpolyaft" />
+                <xs:element ref="fillfo_delay" />
+                <xs:element ref="fillfo_depth" />
+                <xs:element ref="fillfo_depth_onccN" />
+                <xs:element ref="fillfo_depthchanaft" />
+                <xs:element ref="fillfo_depthpolyaft" />
+                <xs:element ref="fillfo_fade" />
+                <xs:element ref="fillfo_freq" />
+                <xs:element ref="fillfo_freqccN" />
+                <xs:element ref="fillfo_freqchanaft" />
+                <xs:element ref="fillfo_freqpolyaft" />
+                <xs:element ref="pitchlfo_delay" />
+                <xs:element ref="pitchlfo_depth" />
+                <xs:element ref="pitchlfo_depth_onccN" />
+                <xs:element ref="pitchlfo_depthchanaft" />
+                <xs:element ref="pitchlfo_depthpolyaft" />
+                <xs:element ref="pitchlfo_fade" />
+                <xs:element ref="pitchlfo_freq" />
+                <xs:element ref="pitchlfo_freqccN" />
+                <xs:element ref="pitchlfo_freqchanaft" />
+                <xs:element ref="pitchlfo_freqpolyaft" />
+                <xs:element ref="lfoN_freq" />
+                <xs:element ref="lfoN_freq_onccX" />
+                <xs:element ref="lfoN_freq_smoothccX" />
+                <xs:element ref="lfoN_freq_stepccX" />
+                <xs:element ref="lfoN_delay" />
+                <xs:element ref="lfoN_delay_onccX" />
+                <xs:element ref="lfoN_fade" />
+                <xs:element ref="lfoN_fade_onccX" />
+                <xs:element ref="lfoN_phase" />
+                <xs:element ref="lfoN_phase_onccX" />
+                <xs:element ref="lfoN_count" />
+                <xs:element ref="lfoN_wave" />
+                <xs:element ref="lfoN_steps" />
+                <xs:element ref="lfoN_stepX" />
+                <xs:element ref="lfoN_stepX_onccY" />
+                <xs:element ref="lfoN_smooth" />
+                <xs:element ref="lfoN_smooth_onccX" />
+                <xs:element ref="lfoN_volume" />
+                <xs:element ref="lfoN_volume_onccX" />
+                <xs:element ref="lfoN_volume_smoothccX" />
+                <xs:element ref="lfoN_volume_stepccX" />
+                <xs:element ref="lfoN_amplitude" />
+                <xs:element ref="lfoN_amplitude_onccX" />
+                <xs:element ref="lfoN_amplitude_smoothccX" />
+                <xs:element ref="lfoN_amplitude_stepccX" />
+                <xs:element ref="lfoN_pan" />
+                <xs:element ref="lfoN_pan_onccX" />
+                <xs:element ref="lfoN_pan_smoothccX" />
+                <xs:element ref="lfoN_pan_stepccX" />
+                <xs:element ref="lfoN_width" />
+                <xs:element ref="lfoN_width_onccX" />
+                <xs:element ref="lfoN_width_smoothccX" />
+                <xs:element ref="lfoN_width_stepccX" />
+                <xs:element ref="lfoN_freq_lfoX" />
+                <xs:element ref="lfoN_depth_lfoX" />
+                <xs:element ref="lfoN_depthadd_lfoX" />
+                <xs:element ref="lfoN_pitch" />
+                <xs:element ref="lfoN_pitch_curveccX" />
+                <xs:element ref="lfoN_pitch_onccX" />
+                <xs:element ref="lfoN_pitch_smoothccX" />
+                <xs:element ref="lfoN_pitch_stepccX" />
+                <xs:element ref="lfoN_cutoff" />
+                <xs:element ref="lfoN_cutoff2" />
+                <xs:element ref="lfoN_cutoff2_onccX" />
+                <xs:element ref="lfoN_cutoff2_smoothccX" />
+                <xs:element ref="lfoN_cutoff2_stepccX" />
+                <xs:element ref="lfoN_cutoff_onccX" />
+                <xs:element ref="lfoN_cutoff_smoothccX" />
+                <xs:element ref="lfoN_cutoff_stepccX" />
+                <xs:element ref="lfoN_resonance" />
+                <xs:element ref="lfoN_resonance2" />
+                <xs:element ref="lfoN_resonance2_onccX" />
+                <xs:element ref="lfoN_resonance2_smoothccX" />
+                <xs:element ref="lfoN_resonance2_stepccX" />
+                <xs:element ref="lfoN_resonance_onccX" />
+                <xs:element ref="lfoN_resonance_smoothccX" />
+                <xs:element ref="lfoN_resonance_stepccX" />
+                <xs:element ref="lfoN_eqXfreq" />
+                <xs:element ref="lfoN_eqXfreq_onccY" />
+                <xs:element ref="lfoN_eqXfreq_smoothccY" />
+                <xs:element ref="lfoN_eqXfreq_stepccY" />
+                <xs:element ref="lfoN_eqXbw" />
+                <xs:element ref="lfoN_eqXbw_onccY" />
+                <xs:element ref="lfoN_eqXbw_smoothccY" />
+                <xs:element ref="lfoN_eqXbw_stepccY" />
+                <xs:element ref="lfoN_eqXgain" />
+                <xs:element ref="lfoN_eqXgain_onccY" />
+                <xs:element ref="lfoN_eqXgain_smoothccY" />
+                <xs:element ref="lfoN_eqXgain_stepccY" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <!-- /Region categories -->
+
+</xs:schema>

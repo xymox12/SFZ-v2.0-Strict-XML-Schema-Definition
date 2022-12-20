@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation>
+    ================ ## Control opcodes ==================================
+    </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="default_path">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Default file path.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="2"></xs:minLength>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="define">
+        <xs:annotation>
+            <xs:documentation>define is the XML equivalent of #define</xs:documentation>
+            <xs:documentation>Attributes: var_name, value</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="value" type="xs:string" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="note_offset">
+        <xs:annotation>
+            <xs:documentation>Tells SFZ to shift all incoming MIDI data by the specified number of notes.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="value" default="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="-127" />
+                        <xs:maxInclusive value="127" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="octave_offset">
+        <xs:complexType>
+            <xs:attribute name="value" default="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="-10" />
+                        <xs:maxInclusive value="10" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="set_ccN">
+        <xs:annotation>
+            <xs:documentation>Sets a default initial value for MIDI CC number N, when the instrument is initially loaded.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="rmm_integer_0_127">
+                    <xs:attribute name="n" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="0" />
+                                <xs:maxInclusive value="127" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

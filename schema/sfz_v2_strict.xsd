@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:include schemaLocation="includes/restrictions.xsd" />
+    <xs:include schemaLocation="includes/control_opcodes.xsd" />
+    <xs:include schemaLocation="includes/region_groups.xsd" />
+    <xs:include schemaLocation="includes/curve_opcodes.xsd" />
+    <xs:include schemaLocation="includes/effects_opcodes.xsd" />
+
+    <xs:annotation>
+        <xs:appinfo># SFZ v2.0 Strict XML Schema</xs:appinfo>
+        <xs:documentation xml:lang="en">
+        This Schema defines an SFZ v2.0 Strict XML document.
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Document Structure ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="sfz">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="control" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="global" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="group" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="region" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="curve" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="effect" minOccurs="0" maxOccurs="unbounded" />
+            </xs:choice>
+            <xs:attribute name="version" default="2.0" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- /## Document Structure -->
+
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Headers ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="control">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="default_path" />
+                <xs:element ref="define" />
+                <xs:element ref="note_offset" />
+                <xs:element ref="octave_offset" />
+                <xs:element ref="set_ccN" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="global">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:group ref="region.soundcontrols" />
+                    <xs:group ref="region.logic.internalconditions" />
+                    <xs:group ref="region.logic.keymappings" />
+                    <xs:group ref="region.logic.midiconditions" />
+                    <xs:group ref="region.logic.triggers" />
+                    <xs:group ref="region.performance.amplifier" />
+                    <xs:group ref="region.performance.eq" />
+                    <xs:group ref="region.performance.filter" />
+                    <xs:group ref="region.performance.pitch" />
+                    <xs:group ref="region.modulation.eg" />
+                    <xs:group ref="region.modulation.lfo" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="region" />
+                    <xs:group ref="region.soundcontrols" />
+                    <xs:group ref="region.logic.internalconditions" />
+                    <xs:group ref="region.logic.keymappings" />
+                    <xs:group ref="region.logic.midiconditions" />
+                    <xs:group ref="region.logic.triggers" />
+                    <xs:group ref="region.performance.amplifier" />
+                    <xs:group ref="region.performance.eq" />
+                    <xs:group ref="region.performance.filter" />
+                    <xs:group ref="region.performance.pitch" />
+                    <xs:group ref="region.modulation.eg" />
+                    <xs:group ref="region.modulation.lfo" />
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="group" default="0" type="xs:nonNegativeInteger" />
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="region">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:group ref="region.soundcontrols" />
+                    <xs:group ref="region.logic.internalconditions" />
+                    <xs:group ref="region.logic.keymappings" />
+                    <xs:group ref="region.logic.midiconditions" />
+                    <xs:group ref="region.logic.triggers" />
+                    <xs:group ref="region.performance.amplifier" />
+                    <xs:group ref="region.performance.eq" />
+                    <xs:group ref="region.performance.filter" />
+                    <xs:group ref="region.performance.pitch" />
+                    <xs:group ref="region.modulation.eg" />
+                    <xs:group ref="region.modulation.lfo" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="curve">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="curve_index" />
+                <xs:choice minOccurs="1" maxOccurs="128">
+                    <xs:element ref="vN" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="effect">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="bus" />
+                    <xs:element ref="effect1" />
+                    <xs:element ref="effect2" />
+                    <xs:element ref="effect3" />
+                    <xs:element ref="effect4" />
+                    <xs:element ref="type" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- /## Headers -->
+
+</xs:schema>

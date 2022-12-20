@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Starter SFZ v2 XML file -->
+<sfz version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/sfz_v2_strict.xsd">
+
+    <control>
+        <default_path>relative-path/to/folder</default_path>
+        <set_ccN n="3">5</set_ccN>
+    </control>
+
+    <global>
+        <cutoff>18000</cutoff>
+        <!-- Examples of SFZ attributes entered as XML attributes -->
+        <lfoN_eqXfreq_onccY n="5" x="1100" y="87" />
+        <lfoN_cutoff_smoothccX n="4" x="86" />
+    </global>
+
+    <group group="0">
+        <key>56</key>
+        <region><sample>example001.wav</sample></region>
+        <region><sample>example002.wav</sample></region>
+    </group>
+
+    <curve>
+        <curve_index>8</curve_index>
+    </curve>
+
+
+</sfz>

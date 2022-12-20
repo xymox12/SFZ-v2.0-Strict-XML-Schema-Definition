@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation>
+    ================ ## Curve opcodes ==================================
+    </xs:documentation>
+    </xs:annotation>
+ 
+    <xs:element name="curve_index"><xs:annotation><xs:documentation>Curve ID definition.</xs:documentation></xs:annotation><xs:simpleType><xs:restriction base="xs:integer"><xs:minInclusive value="7" /></xs:restriction></xs:simpleType></xs:element>
+    <xs:element name="vN"><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_-1_1"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+    
+</xs:schema>

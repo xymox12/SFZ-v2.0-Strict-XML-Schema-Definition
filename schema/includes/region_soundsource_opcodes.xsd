@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Region opcodes: Sound Source ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+<!-- Type: Sample Playback -->
+<xs:element name="count"><xs:annotation><xs:documentation xml:lang="en">The number of times the sample will be played.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="delay"><xs:annotation><xs:documentation xml:lang="en">Region delay time.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="delay_onccN"><xs:annotation><xs:documentation xml:lang="en">Region delay time after MIDI continuous controller N messages are received. If the region receives a note-off message before delay time, the region won't play.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="delay_random"><xs:annotation><xs:documentation xml:lang="en">Region random delay time.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="delay_samples" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">Allows the region playback to be postponed for the specified time, measured in samples (and therefore dependent on current sample rate).</xs:documentation></xs:annotation></xs:element>
+<xs:element name="delay_samples_onccN"><xs:complexType><xs:attribute name="n" type="xs:integer" use="required" /></xs:complexType></xs:element>
+<xs:element name="end"><xs:annotation><xs:documentation xml:lang="en">The endpoint of the sample. If unspecified, the entire sample will play.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="loop_count" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">The number of times a loop will repeat.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="loop_crossfade" type="xs:float"><xs:annotation><xs:documentation xml:lang="en">Loop cross fade.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="loop_end"><xs:annotation><xs:documentation xml:lang="en">The loop end point, in samples.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="loop_mode"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="no_loop" /><xs:enumeration value="one_shot" /><xs:enumeration value="loop_continuous" /><xs:enumeration value="loop_sustain" /></xs:restriction></xs:simpleType></xs:element>
+<xs:element name="loop_start"><xs:annotation><xs:documentation xml:lang="en">The loop start point, in samples.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="loop_type"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="forward" /><xs:enumeration value="backward" /><xs:enumeration value="alternate" /></xs:restriction></xs:simpleType></xs:element>
+<xs:element name="offset"><xs:annotation><xs:documentation xml:lang="en">The offset used to play the sample.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="offset_onccN"><xs:annotation><xs:documentation xml:lang="en">The offset used to play the sample according to last position of MIDI continuous controller N.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="offset_random"><xs:annotation><xs:documentation xml:lang="en">Random offset added to the region offset.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_4294967296" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="sample" type="xs:string"><xs:annotation><xs:documentation xml:lang="en">Defines which sample file the region will play, or custom oscillators e.g. *sine, *silence, *noise, *triangle (*tri), *square, *saw.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="sync_beats"><xs:annotation><xs:documentation xml:lang="en">Region playing synchronization to host position.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_32" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="sync_offset"><xs:annotation><xs:documentation xml:lang="en">Region playing synchronization to host position offset.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_32" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="delay_beats" type="xs:float"><xs:annotation><xs:documentation xml:lang="en">Delays the start of the region until a certain amount of musical beats are passed.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="stop_beats" type="xs:float"><xs:annotation><xs:documentation xml:lang="en">Stops a region after a certain amount of beats have played.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="direction"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="forward" /><xs:enumeration value="reverse" /></xs:restriction></xs:simpleType></xs:element>
+<xs:element name="md5" type="xs:string"><xs:annotation><xs:documentation xml:lang="en">Calculates the &lt;a href='https://en.wikipedia.org/wiki/MD5'&gt;MD5&lt;/a&gt; digital fingerprint hash of a sample file, represented as a sequence of 32 hexadecimal digits.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="reverse_loccN"><xs:annotation><xs:documentation xml:lang="en">If MIDI CC N is between &lt;code&gt;reverse_loccN&lt;/code&gt; and &lt;code&gt;reverse_hiccN&lt;/code&gt;, the region plays reversed.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_127"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="reverse_hiccN"><xs:annotation><xs:documentation xml:lang="en">If MIDI CC N is between &lt;code&gt;reverse_loccN&lt;/code&gt; and &lt;code&gt;reverse_hiccN&lt;/code&gt;, the region plays reversed.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_127"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="waveguide"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="on" /><xs:enumeration value="off" /></xs:restriction></xs:simpleType></xs:element>
+
+<!-- Category: Instrument Settings -->
+<!-- 
+<xs:element name="define" type="xs:string"><xs:annotation><xs:documentation xml:lang="en">Creates a variable and gives it a value.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="default_path" type="xs:string"><xs:annotation><xs:documentation xml:lang="en">Default file path.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="note_offset" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">Tells SFZ to shift all incoming MIDI data by the specified number of notes.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="octave_offset" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">Shifts all incoming MIDI data by the specified octave.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="set_ccN"><xs:annotation><xs:documentation xml:lang="en">Sets a default initial value for MIDI CC number N, when the instrument is initially loaded.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_127"><xs:attribute name="n" type="xs:integer" use="required" /></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+-->
+
+
+<!-- Type: Voice Lifecycle -->
+<!-- group is an attribute of the Group Header to avoid name clash
+<xs:element name="group"><xs:annotation><xs:documentation xml:lang="en">Exclusive group number for this region.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_-2147483648_2147483647" /></xs:simpleContent></xs:complexType></xs:element>
+ -->
+<xs:element name="off_by"><xs:annotation><xs:documentation xml:lang="en">Region off group.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_-2147483648_2147483647" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="off_mode"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="fast" /><xs:enumeration value="normal" /><xs:enumeration value="time" /></xs:restriction></xs:simpleType></xs:element>
+<xs:element name="output"><xs:annotation><xs:documentation xml:lang="en">The stereo output number for this region.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_integer_0_1024" /></xs:simpleContent></xs:complexType></xs:element>
+<xs:element name="polyphony" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">Polyphony voice limit.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="note_polyphony" type="xs:integer"><xs:annotation><xs:documentation xml:lang="en">Polyphony limit for playing the same note repeatedly.</xs:documentation></xs:annotation></xs:element>
+<xs:element name="note_selfmask"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="on" /><xs:enumeration value="off" /></xs:restriction></xs:simpleType></xs:element>
+<xs:element name="rt_dead"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="on" /><xs:enumeration value="off" /></xs:restriction></xs:simpleType></xs:element>
+
+</xs:schema>

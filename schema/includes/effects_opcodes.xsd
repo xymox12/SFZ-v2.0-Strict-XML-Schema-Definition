@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Effects opcodes ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="bus"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="main" /><xs:enumeration value="aux1" /><xs:enumeration value="aux2" /><xs:enumeration value="aux3" /><xs:enumeration value="aux4" /><xs:enumeration value="aux5" /><xs:enumeration value="aux6" /><xs:enumeration value="aux7" /><xs:enumeration value="aux8" /><xs:enumeration value="fx1" /><xs:enumeration value="fx2" /><xs:enumeration value="fx3" /><xs:enumeration value="fx4" /><xs:enumeration value="midi" /></xs:restriction></xs:simpleType></xs:element>
+    <xs:element name="effect1"><xs:annotation><xs:documentation xml:lang="en">Level of effect1 send, in percentage (reverb in Cakewalk sfz).</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+    <xs:element name="effect2"><xs:annotation><xs:documentation xml:lang="en">Level of effect2 send, in percentage (chorus in Cakewalk sfz).</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+    <xs:element name="effect3"><xs:annotation><xs:documentation xml:lang="en">Gain of the region's send into the 3rd effect bus.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+    <xs:element name="effect4"><xs:annotation><xs:documentation xml:lang="en">Gain of the region's send into the 4th effect bus.</xs:documentation></xs:annotation><xs:complexType><xs:simpleContent><xs:extension base="rmm_float_0_100" /></xs:simpleContent></xs:complexType></xs:element>
+    <xs:element name="type"><xs:simpleType><xs:restriction base="xs:string"><xs:enumeration value="apan" /><xs:enumeration value="comp" /><xs:enumeration value="delay" /><xs:enumeration value="disto" /><xs:enumeration value="eq" /><xs:enumeration value="filter" /><xs:enumeration value="fverb" /><xs:enumeration value="gate" /><xs:enumeration value="limiter" /><xs:enumeration value="lofi" /><xs:enumeration value="mverb" /><xs:enumeration value="phaser" /><xs:enumeration value="static" /><xs:enumeration value="strings" /><xs:enumeration value="tdfir" /><xs:enumeration value="com.mda.Limiter" /><xs:enumeration value="com.mda.Overdrive" /><xs:enumeration value="com.mda.Leslie" /><xs:enumeration value="com.mda.RingMod" /><xs:enumeration value="com.mda.Delay" /><xs:enumeration value="com.mda.Bandisto" /><xs:enumeration value="com.mda.Ambience" /><xs:enumeration value="com.mda.DubDelay" /><xs:enumeration value="com.mda.Detune" /><xs:enumeration value="com.mda.Dither" /><xs:enumeration value="com.mda.Combo" /><xs:enumeration value="com.mda.Degrade" /><xs:enumeration value="com.mda.SubSynth" /><xs:enumeration value="com.mda.RezFilter" /></xs:restriction></xs:simpleType></xs:element>
+
+</xs:schema>

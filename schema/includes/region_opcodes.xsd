@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+        ================ ## Region opcodes ==================================
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:include schemaLocation="region_soundsource_opcodes.xsd" />
+    <xs:include schemaLocation="region_regionlogic_opcodes.xsd" />
+    <xs:include schemaLocation="region_performanceparameters_opcodes.xsd" />
+    <xs:include schemaLocation="region_modulation_opcodes.xsd" />
+
+</xs:schema>

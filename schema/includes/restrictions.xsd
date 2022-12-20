@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation>
+    ================ ## Common Restrictions ==================================
+    </xs:documentation>
+    </xs:annotation>
+
+    <!-- Restrictions: min max  -->
+    
+    <!-- Floats -->
+    <xs:simpleType name="rmm_float_-30000_30000"><xs:restriction base="xs:float"><xs:minInclusive value="-30000" /><xs:maxInclusive value="30000" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-1200_1200"><xs:restriction base="xs:float"><xs:minInclusive value="-1200" /><xs:maxInclusive value="1200" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-200_200"><xs:restriction base="xs:float"><xs:minInclusive value="-200" /><xs:maxInclusive value="200" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-144_6"><xs:restriction base="xs:float"><xs:minInclusive value="-144" /><xs:maxInclusive value="6" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-144_48"><xs:restriction base="xs:float"><xs:minInclusive value="-144" /><xs:maxInclusive value="48" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-100_100"><xs:restriction base="xs:float"><xs:minInclusive value="-100" /><xs:maxInclusive value="100" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-96_12"><xs:restriction base="xs:float"><xs:minInclusive value="-96" /><xs:maxInclusive value="12" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-96_24"><xs:restriction base="xs:float"><xs:minInclusive value="-96" /><xs:maxInclusive value="24" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-10_10"><xs:restriction base="xs:float"><xs:minInclusive value="-10" /><xs:maxInclusive value="10" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-4_4"><xs:restriction base="xs:float"><xs:minInclusive value="-4" /><xs:maxInclusive value="4" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_-1_1"><xs:restriction base="xs:float"><xs:minInclusive value="-1" /><xs:maxInclusive value="1" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_1"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="1" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0.001_4"><xs:restriction base="xs:float"><xs:minInclusive value="0.001" /><xs:maxInclusive value="4" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_20"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="20" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_24"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="24" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_32"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="32" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_40"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="40" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_100"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="100" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_200"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="200" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_500"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="500" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_30000"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="30000" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_float_0_256000"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="256000" /></xs:restriction></xs:simpleType>
+    
+    <!-- Intergers -->
+    <xs:simpleType name="rmm_integer_-2147483648_2147483647"><xs:restriction base="xs:integer"><xs:minInclusive value="-2147483648" /><xs:maxInclusive value="2147483647" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-12000_12000"><xs:restriction base="xs:integer"><xs:minInclusive value="-12000" /><xs:maxInclusive value="12000" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-9600_9600"><xs:restriction base="xs:integer"><xs:minInclusive value="-9600" /><xs:maxInclusive value="9600" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-8192_8192"><xs:restriction base="xs:integer"><xs:minInclusive value="-8192" /><xs:maxInclusive value="8192" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-1200_1200"><xs:restriction base="xs:integer"><xs:minInclusive value="-1200" /><xs:maxInclusive value="1200" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-127_127"><xs:restriction base="xs:integer"><xs:minInclusive value="-127" /><xs:maxInclusive value="127" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_-100_100"><xs:restriction base="xs:integer"><xs:minInclusive value="-100" /><xs:maxInclusive value="100" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_127"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="127" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_255"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="255" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_1024"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="1024" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_1200"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="1200" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_9600"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="9600" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_0_4294967296"><xs:restriction base="xs:integer"><xs:minInclusive value="0" /><xs:maxInclusive value="4294967296" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_1_16"><xs:restriction base="xs:integer"><xs:minInclusive value="1" /><xs:maxInclusive value="16" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_1_100"><xs:restriction base="xs:integer"><xs:minInclusive value="1" /><xs:maxInclusive value="100" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_1_127"><xs:restriction base="xs:integer"><xs:minInclusive value="1" /><xs:maxInclusive value="127" /></xs:restriction></xs:simpleType>
+    <xs:simpleType name="rmm_integer_1_1200"><xs:restriction base="xs:integer"><xs:minInclusive value="1" /><xs:maxInclusive value="1200" /></xs:restriction></xs:simpleType>    
+
+</xs:schema>
