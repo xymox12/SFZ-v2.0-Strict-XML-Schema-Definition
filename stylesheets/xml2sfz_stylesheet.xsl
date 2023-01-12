@@ -95,7 +95,7 @@
         <xsl:text>&#xd;</xsl:text>
     </xsl:template>
     
-    <xsl:template match="*[@n and @x-value and @y]">  
+    <xsl:template match="*[@n and @x and @y]">  
         <xsl:variable name="nval" select="@n" />
         <xsl:variable name="xval" select="@x" />
         <xsl:variable name="yval" select="@y" />
