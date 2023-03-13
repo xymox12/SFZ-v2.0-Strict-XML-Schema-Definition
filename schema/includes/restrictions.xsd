@@ -33,7 +33,7 @@
     <xs:simpleType name="rmm_float_0_30000"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="30000" /></xs:restriction></xs:simpleType>
     <xs:simpleType name="rmm_float_0_256000"><xs:restriction base="xs:float"><xs:minInclusive value="0" /><xs:maxInclusive value="256000" /></xs:restriction></xs:simpleType>
     
-    <!-- Intergers -->
+    <!-- Integers -->
     <xs:simpleType name="rmm_integer_-2147483648_2147483647"><xs:restriction base="xs:integer"><xs:minInclusive value="-2147483648" /><xs:maxInclusive value="2147483647" /></xs:restriction></xs:simpleType>
     <xs:simpleType name="rmm_integer_-12000_12000"><xs:restriction base="xs:integer"><xs:minInclusive value="-12000" /><xs:maxInclusive value="12000" /></xs:restriction></xs:simpleType>
     <xs:simpleType name="rmm_integer_-9600_9600"><xs:restriction base="xs:integer"><xs:minInclusive value="-9600" /><xs:maxInclusive value="9600" /></xs:restriction></xs:simpleType>
